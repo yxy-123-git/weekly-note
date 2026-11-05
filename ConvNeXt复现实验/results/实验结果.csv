@@ -1,0 +1,8 @@
+experiment,train_images,val_images,epochs,model,batch_size,update_freq,learning_rate,mixup,cutmix,best_epoch,top1_percent,top5_percent,measurement,notes
+full_convnext,126689,5000,100,convnext_tiny,32,16,0.0005,0.8,1.0,97,82.78,95.90,independent_fp32,best checkpoint
+full_resnet,126689,5000,100,resnet50,32,16,0.0005,0.8,1.0,96,81.64,95.18,independent_fp32,best checkpoint
+finetune_lr_only,126689,5000,10,convnext_tiny,32,16,0.00001,0.8,1.0,,82.72,,training_log_best,no independent FP32 verification recorded
+finetune_no_mix,126689,5000,10,convnext_tiny,32,16,0.00001,0,0,,83.22,96.06,independent_fp32,best checkpoint; epoch not recovered
+subset_resnet,20000,5000,100,resnet50,32,16,0.0005,0.8,1.0,,49.84,,training_log_best,subset result
+subset_convnext,20000,5000,100,convnext_tiny,32,16,0.0005,0.8,1.0,,43.02,,training_log_best,subset result
+subset_convnext_batch128,20000,5000,100,convnext_tiny,,,0.000125,,,,33.98,,training_log_best,effective batch 128; exact step batch and accumulation not recovered
